@@ -1,6 +1,9 @@
 package com.example.demo.entity;
 
-public class comment {
+import lombok.Data;
+
+@Data
+public class commentArray {
     private String idNguoiDung;
 
     private String tenNguoiDung;

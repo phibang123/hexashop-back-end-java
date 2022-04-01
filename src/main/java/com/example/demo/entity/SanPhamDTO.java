@@ -5,34 +5,42 @@ import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Document(collection = "sanphamschemas")
 public class SanPhamDTO {
+  @NotNull(message = "ten san pham must not be null")
   private String tenSanPham;
 
+  @NotNull(message = "gia tien must not be null")
   private Number giaTien;
 
-  private Boolean sale;
+  private boolean sale;
 
-  @Field
   private Number phanTramSale = 0;
 
-  @Field
   private Number thanhTien = 0;
 
-  @Field
   private String hinhAnh = "https://img-cdn.2game.vn/2021/02/28/Hutao-va-nhung-dieu-can-biet-khi-co-nang-ra-mat-game-thu-Genshin-Impact-1.jpg";
 
+  @NotNull(message = "categories must not be null")
   private String categories;
 
-  private sanPhamThich luotThich;
+  @Field
+  private List<sanPhamThichArray> luotThich;
 
-  private List<comment> comment;
+  @Field
+  private List<commentArray> comment;
 
   private Number soLuong;
+
+  private String moTa = "Sản Phẩm mới";
+
+
 }

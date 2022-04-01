@@ -1,13 +1,16 @@
 package com.example.demo.entity;
 
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Data
 @Document(collection = "lichsumuahangschemas")
 public class LichSuMuaHangDTO {
@@ -26,8 +29,6 @@ public class LichSuMuaHangDTO {
 
     private String soDt;
 
-    private sex sex;
-
     private String trangThai;
 
     private Date ngayDat;
@@ -36,5 +37,17 @@ public class LichSuMuaHangDTO {
 
     private Number soTienGiam;
 
-    private List<ArrayTongSanPham> tongSanPham;
+    public LichSuMuaHangDTO(String idNguoiDung, String taiKhoan, String email, String diaChi, String hoTen, String avatar, String soDt, String trangThai, Date ngayDat, Number tongTien, Number soTienGiam) {
+        this.idNguoiDung = idNguoiDung;
+        this.taiKhoan = taiKhoan;
+        this.email = email;
+        this.diaChi = diaChi;
+        this.hoTen = hoTen;
+        this.avatar = avatar;
+        this.soDt = soDt;
+        this.trangThai = trangThai;
+        this.ngayDat = ngayDat;
+        this.tongTien = tongTien;
+        this.soTienGiam = soTienGiam;
+    }
 }

@@ -1,13 +1,18 @@
 package com.example.demo.entity;
 
-public class ArrayTongSanPham {
+import lombok.Data;
+
+import java.time.ZonedDateTime;
+
+@Data
+public class giohangArray {
     private String _idSanPham;
 
     private String tenSanPham;
 
     private Number soLuong;
 
-    private Boolean sale;
+    private boolean sale;
 
     private Number phanTramSale;
 
@@ -16,4 +21,6 @@ public class ArrayTongSanPham {
     private Number giaTien;
 
     private String hinhAnh;
+
+    private ZonedDateTime ngayThem;
 }

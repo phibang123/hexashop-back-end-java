@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-public class gioHang {
+public class tongSanPhamArray {
     private String _idSanPham;
 
     private String tenSanPham;
@@ -16,6 +16,4 @@ public class gioHang {
     private Number giaTien;
 
     private String hinhAnh;
-
-    private String ngayThem;
 }
